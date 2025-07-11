@@ -59,7 +59,7 @@ fakestore-api-test/
 
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/fakestore-api-test.git**
+git cloneh ttps://github.com/PaullaMatos/fakestore-api-test.git**
 
 2. Navegue até a pasta do projeto:
    cd fakestore-api-test
