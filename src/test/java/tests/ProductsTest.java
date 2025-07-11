@@ -1,6 +1,5 @@
 package tests;
 
-
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,11 +9,13 @@ import static org.hamcrest.Matchers.*;
 
 public class ProductsTest {
 
-    /* teste - products
- Listar todos os produtos.
- Buscar produto por ID.
- Produto com ID inexistente.
- Produto com ID inválido (abc).*/
+    /*
+     * Testes para a rota /products:
+     * - Listar todos os produtos.
+     * - Buscar produto por ID.
+     * - Produto com ID inexistente.
+     * - Produto com ID inválido (abc).
+     */
 
     @BeforeAll
     public static void setup() {
@@ -54,7 +55,7 @@ public class ProductsTest {
                 .get("/products/9999")
                 .then()
                 .statusCode(anyOf(is(404), is(200)))
-                .body(isEmptyOrNullString());
+                .body(emptyOrNullString()); // atualizado
     }
 
     @Test
@@ -64,6 +65,6 @@ public class ProductsTest {
                 .get("/products/abc")
                 .then()
                 .statusCode(200)
-                .body(isEmptyOrNullString());
+                .body(emptyOrNullString()); // atualizado
     }
 }
